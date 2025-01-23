@@ -12,6 +12,8 @@ return {
         "ts_ls",
         "tailwindcss",
         "gopls",
+        "jsonls",
+        "markdown_oxide",
         -- add more arguments for adding more language servers
       },
     },

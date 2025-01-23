@@ -60,3 +60,19 @@ map("n", "A-z", ":bnext<CR>", { noremap = true, silent = true })
 -- Go to the previous buffer
 --
 map("n", "A-x", ":bprevious<CR>", { noremap = true, silent = true })
+
+-- Spectre
+
+map('n', '<leader>R', '<cmd>lua require("spectre").toggle()<CR>', {
+
+    desc = "Toggle Spectre"
+})
+map('n', '<leader>rw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+    desc = "Search current word"
+})
+map('v', '<leader>rw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+    desc = "Search current word"
+})
+map('n', '<leader>rp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+    desc = "Search on current file"
+})
