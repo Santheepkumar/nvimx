@@ -1,6 +1,6 @@
-# MyNvim Template
+# NvimX
 
-**NOTE:** This template is build on top of AstroNvim v4+
+**NOTE:** This template is build on top of AstroNvim v4+ and created by me
 
 
 ## 🛠️ Installation
