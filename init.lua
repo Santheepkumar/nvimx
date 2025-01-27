@@ -18,5 +18,12 @@ end
 require "lazy_setup"
 require "polish"
 require "mappings"
-require('telescope').load_extension('harpoon')
-
+require("telescope").load_extension "harpoon"
+require("telescope").setup {
+  defaults = {
+    file_ignore_patterns = {
+      "node_modules",
+      "dist"
+    },
+  },
+}
