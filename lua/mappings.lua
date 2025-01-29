@@ -77,4 +77,5 @@ map({ "n", "v" }, "<C-x>", '"_dd', {
   desc = "Del without yanking",
 })
 
-map("n", "<C-i>", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
+map("n", "<C-A-i>", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
+
