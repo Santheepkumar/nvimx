@@ -1,9 +1,9 @@
 local map = vim.keymap.set
-map("n", "<leader>u", require("undotree").toggle, { noremap = true, silent = true })
+-- map("n", "<leader>u", require("undotree").toggle, { noremap = true, silent = true })
 
 -- or
-map("n", "<leader>uo", require("undotree").open, { noremap = true, silent = true })
-map("n", "<leader>uc", require("undotree").close, { noremap = true, silent = true })
+-- map("n", "<leader>uo", require("undotree").open, { noremap = true, silent = true })
+-- map("n", "<leader>uc", require("undotree").close, { noremap = true, silent = true })
 
 map("i", "jk", "<ESC>")
 -- Normal mode: Move the current line up or down
@@ -77,5 +77,6 @@ map({ "n", "v" }, "<C-x>", '"_dd', {
   desc = "Del without yanking",
 })
 
-map("n", "<C-A-i>", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
 map("n", "<leader>tw", "<cmd>Twilight<CD>", { noremap = true, silent = true })
+map("n", "<C-A-i>", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
+map("v", "<leader>sx", ":CarbonNow<CR>", { silent = true, desc = "Snap code carbon"})
