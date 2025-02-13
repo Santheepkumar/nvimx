@@ -1,0 +1,4 @@
+
+autocmd("FocusGained", {
+  command = "checktime"
+})

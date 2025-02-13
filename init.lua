@@ -23,7 +23,26 @@ require("telescope").setup {
   defaults = {
     file_ignore_patterns = {
       "node_modules",
-      "dist"
+      "dist",
+    },
+  },
+}
+require("neoscroll").setup { mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>" } }
+require("lazy").setup {
+  "JoosepAlviste/nvim-ts-context-commentstring",
+}
+
+require("nvim-treesitter.configs").setup {
+  context_commentstring = {
+    config = {
+      javascript = {
+        __default = "// %s",
+        jsx_element = "{/* %s */}",
+        jsx_fragment = "{/* %s */}",
+        jsx_attribute = "// %s",
+        comment = "// %s",
+      },
+      typescript = { __default = "// %s", __multiline = "/* %s */" },
     },
   },
 }

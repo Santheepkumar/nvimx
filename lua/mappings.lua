@@ -1,5 +1,5 @@
 local map = vim.keymap.set
--- map("n", "<leader>u", require("undotree").toggle, { noremap = true, silent = true })
+map("n", "<leader>un", require("undotree").toggle, { noremap = true, silent = true })
 
 -- or
 -- map("n", "<leader>uo", require("undotree").open, { noremap = true, silent = true })
@@ -77,6 +77,60 @@ map({ "n", "v" }, "<C-x>", '"_dd', {
   desc = "Del without yanking",
 })
 
-map("n", "<leader>tw", "<cmd>Twilight<CD>", { noremap = true, silent = true })
-map("n", "<C-A-i>", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
-map("v", "<leader>sx", ":CarbonNow<CR>", { silent = true, desc = "Snap code carbon"})
+map("n", "<leader>tw", "<cmd>Twilight<CR>", { noremap = true, silent = true, desc = "Toggle Twilight" })
+map({ "n", "i" }, "<C-A-i>", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
+map("v", "<leader>sx", ":CarbonNow<CR>", { silent = true, desc = "Snap code carbon" })
+
+-- ufo
+map("n", "zR", require("ufo").openAllFolds)
+map("n", "zM", require("ufo").closeAllFolds)
+
+-- obsidian
+map("n", "<leader>oo", "<cmd>ObsidianBacklinks<cr>", { desc = "Obsidian Backlinks" })
+map("n", "<leader>of", "<cmd>ObsidianFollowLink<cr>", { desc = "Obsidian Follow Link" })
+map("n", "<leader>on", "<cmd>ObsidianNew<cr>", { desc = "Obsidian New Note" })
+map("n", "<leader>ot", "<cmd>ObsidianToday<cr>", { desc = "Obsidian Today" })
+map("n", "<leader>oy", "<cmd>ObsidianYesterday<cr>", { desc = "Obsidian Yesterday" })
+map("n", "<leader>or", "<cmd>ObsidianTomorrow<cr>", { desc = "Obsidian Tomorrow" })
+map("n", "<leader>fp", "0<c-g>", { desc = "Show full file path" })
+
+-- map("n", "<leader>sc", ":set spell!<CR>", opts)
+
+-- Bookmarks
+map(
+  "n",
+  "<leader>fB",
+  "<cmd>lua require('telescope').extensions.bookmarks.list()<CR>",
+  { desc = "Open Bookmarks in Telescope", silent = true }
+)
+local utils = require "utils"
+-- Copy file path from Neo-tree
+map(
+  "n",
+  "<leader>af",
+  function() utils.copy_neo_tree_file_path() end,
+  { noremap = true, silent = true, desc = "Copy file path" }
+)
+
+--- Open current currrent file in Nautilus
+map(
+  "n",
+  "<leader>aO",
+  function() utils.open_in_nautilus() end,
+  { noremap = true, silent = true, desc = "Open current file in Nautilus" }
+)
+
+--- Open new tree file in Nautilus
+map(
+  "n",
+  "<leader>ao",
+  function() utils.open_in_tree_nautilus() end,
+  { noremap = true, silent = true, desc = "Open tree path in Nautilus" }
+)
+-- Open current file in VS code
+map(
+  "n",
+  "<leader>av",
+  function() utils.open_in_vscode() end,
+  { noremap = true, silent = true, desc = "Open in VS code" }
+)
