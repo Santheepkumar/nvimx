@@ -81,6 +81,9 @@ map("n", "<leader>tw", "<cmd>Twilight<CR>", { noremap = true, silent = true, des
 map({ "n", "i" }, "<C-A-i>", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true })
 map("v", "<leader>sx", ":CarbonNow<CR>", { silent = true, desc = "Snap code carbon" })
 
+-- map('n', 'p', '"_dP', { noremap = true, silent = true })
+-- map('n', 'P', '"_dP', { noremap = true, silent = true })
+
 -- ufo
 map("n", "zR", require("ufo").openAllFolds)
 map("n", "zM", require("ufo").closeAllFolds)
@@ -96,6 +99,8 @@ map("n", "<leader>fp", "0<c-g>", { desc = "Show full file path" })
 
 -- map("n", "<leader>sc", ":set spell!<CR>", opts)
 
+
+-- map("n", "<leader>ad", "<cmd>DiffviewOpen<cr>", { desc = "Diffview Open" })
 -- Bookmarks
 map(
   "n",
@@ -134,3 +139,16 @@ map(
   function() utils.open_in_vscode() end,
   { noremap = true, silent = true, desc = "Open in VS code" }
 )
+
+vim.opt.clipboard = "unnamedplus"
+
+-- Copy to system clipboard
+map("v", "<C-c>", '"+y', { noremap = true, silent = true }) 
+
+-- Paste from system clipboard
+map("n", "<C-v>", '"+p', { noremap = true, silent = true }) 
+map("i", "<C-v>", '<C-r>+', { noremap = true, silent = true }) 
+map("c", "<C-v>", '<C-r>+', { noremap = true, silent = true }) 
+
+-- Prevent overwriting clipboard when pasting
+map("v", "p", '"_dP', { noremap = true, silent = true }) 
