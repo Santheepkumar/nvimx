@@ -20,7 +20,9 @@ map("n", "<leader>j", "<cmd>lprev<CR>zz")
 -- map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
+-- Quick fix
+map("n", "<A-j>", "<cmd>cnext<CR>") 
+map("n", "<A-k>", "<cmd>cprev<CR>")
 -- Prime
 
 -- map("n", "<leader>pv", vim.cmd.Ex)
