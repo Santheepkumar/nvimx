@@ -24,7 +24,7 @@ require("telescope").setup {
     file_ignore_patterns = {
       "node_modules",
       "dist",
-    },
+     },
   },
 }
 require("neoscroll").setup { mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>" } }

@@ -163,3 +163,7 @@ map('n', '<Leader>mt', ':lua MiniMap.toggle()<CR>', { noremap = true, silent = t
 map('n', '<Leader>ms', ':lua MiniMap.toggle_side()<CR>', { noremap = true, silent = true }) -- Toggle side
 map('n', '<Leader>mf', ':lua MiniMap.toggle_focus()<CR>', { noremap = true, silent = true }) -- Focus on MiniMap
 map('n', '<Leader>mr', ':lua MiniMap.refresh()<CR>', { noremap = true, silent = true }) -- Refresh MiniMap
+
+
+-- Neo Tree
+map("n", "<Leader>ab", ':Neotree buffers<CR>' )
