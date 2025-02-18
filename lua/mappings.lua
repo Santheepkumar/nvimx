@@ -154,3 +154,12 @@ map("c", "<C-v>", '<C-r>+', { noremap = true, silent = true })
 
 -- Prevent overwriting clipboard when pasting
 map("v", "p", '"_dP', { noremap = true, silent = true }) 
+
+
+-- MiniMap shortcuts
+map('n', '<Leader>mo', ':lua MiniMap.open()<CR>', { noremap = true, silent = true })  -- Open MiniMap
+map('n', '<Leader>mc', ':lua MiniMap.close()<CR>', { noremap = true, silent = true }) -- Close MiniMap
+map('n', '<Leader>mt', ':lua MiniMap.toggle()<CR>', { noremap = true, silent = true }) -- Toggle MiniMap
+map('n', '<Leader>ms', ':lua MiniMap.toggle_side()<CR>', { noremap = true, silent = true }) -- Toggle side
+map('n', '<Leader>mf', ':lua MiniMap.toggle_focus()<CR>', { noremap = true, silent = true }) -- Focus on MiniMap
+map('n', '<Leader>mr', ':lua MiniMap.refresh()<CR>', { noremap = true, silent = true }) -- Refresh MiniMap
