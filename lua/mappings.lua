@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-map("n", "<leader>un", require("undotree").toggle, { noremap = true, silent = true })
+map("n", "<leader>un", require("undotree").toggle, { desc = "Toggle Undotree", noremap = true, silent = true })
 
 -- or
 -- map("n", "<leader>uo", require("undotree").open, { noremap = true, silent = true })
@@ -21,7 +21,7 @@ map("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Quick fix
-map("n", "<A-j>", "<cmd>cnext<CR>") 
+map("n", "<A-j>", "<cmd>cnext<CR>")
 map("n", "<A-k>", "<cmd>cprev<CR>")
 -- Prime
 
@@ -101,7 +101,6 @@ map("n", "<leader>fp", "0<c-g>", { desc = "Show full file path" })
 
 -- map("n", "<leader>sc", ":set spell!<CR>", opts)
 
-
 -- map("n", "<leader>ad", "<cmd>DiffviewOpen<cr>", { desc = "Diffview Open" })
 -- Bookmarks
 map(
@@ -145,25 +144,19 @@ map(
 vim.opt.clipboard = "unnamedplus"
 
 -- Copy to system clipboard
-map("v", "<C-c>", '"+y', { noremap = true, silent = true }) 
+map("v", "<C-c>", '"+y', { noremap = true, silent = true })
 
 -- Paste from system clipboard
-map("n", "<C-v>", '"+p', { noremap = true, silent = true }) 
-map("i", "<C-v>", '<C-r>+', { noremap = true, silent = true }) 
-map("c", "<C-v>", '<C-r>+', { noremap = true, silent = true }) 
+map("n", "<C-v>", '"+p', { noremap = true, silent = true })
+map("i", "<C-v>", "<C-r>+", { noremap = true, silent = true })
+map("c", "<C-v>", "<C-r>+", { noremap = true, silent = true })
 
 -- Prevent overwriting clipboard when pasting
-map("v", "p", '"_dP', { noremap = true, silent = true }) 
-
+map("v", "p", '"_dP', { noremap = true, silent = true })
 
 -- MiniMap shortcuts
-map('n', '<Leader>mo', ':lua MiniMap.open()<CR>', { noremap = true, silent = true })  -- Open MiniMap
-map('n', '<Leader>mc', ':lua MiniMap.close()<CR>', { noremap = true, silent = true }) -- Close MiniMap
-map('n', '<Leader>mt', ':lua MiniMap.toggle()<CR>', { noremap = true, silent = true }) -- Toggle MiniMap
-map('n', '<Leader>ms', ':lua MiniMap.toggle_side()<CR>', { noremap = true, silent = true }) -- Toggle side
-map('n', '<Leader>mf', ':lua MiniMap.toggle_focus()<CR>', { noremap = true, silent = true }) -- Focus on MiniMap
-map('n', '<Leader>mr', ':lua MiniMap.refresh()<CR>', { noremap = true, silent = true }) -- Refresh MiniMap
-
+map("n", "<Leader>mo", '<cmd>lua require("mini.map").open()<cr>', { noremap = true, silent = true }) -- Open MiniMap
+map("n", "<Leader>mc", '<cmd>lua require("mini.map").close()<cr>', { noremap = true, silent = true }) -- Close MiniMap
 
 -- Neo Tree
-map("n", "<Leader>ab", ':Neotree buffers<CR>' )
+map("n", "<Leader>ab", ":Neotree buffers<CR>")
